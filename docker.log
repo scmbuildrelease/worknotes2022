@@ -1,4 +1,11 @@
 
-a useful docker reg
+- a useful docker reg
 - 
 docker run --name registry-browser -it -p 8082:8080 -e DOCKER_REGISTRY_URL=http://registry.xxxxx.xxxx.net klausmeyer/docker-registry-browser
+
+
+- start docker
+systemctl: 
+$ sudo systemctl start docker
+service:
+$ sudo service docker start
