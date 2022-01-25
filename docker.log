@@ -51,3 +51,23 @@ sudo systemctl enable containerd.service
 sudo systemctl restart docker.service
 sudo netstat -lntp | grep dockerd
 sudo service docker restart
+
+
+
+RUN rm -rf `find /etc/yum.repos.d/ -name '*.repo'`
+COPY aa.repo  /etc/yum.repos.d/
+COPY Percona.repo /etc/yum.repos.d/
+COPY CentOS-Base.repo /etc/yum.repos.d/
+COPY EPEL-Base.repo /etc/yum.repos.d/
+RUN yum install -y git-lfs
+
+[epel]
+name=CentOS-$releasever - EPEL
+baseurl=http://repo-aa.cc.aa.net/centos/fedora-epel/$releasever/$basearch/
+gpgcheck=0
+
+
+
+
+
+
