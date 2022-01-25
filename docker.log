@@ -23,6 +23,15 @@ docker rmi $(docker images -q)
 launchctl list | grep docker
 docker compose ls
 
+
+docker images | grep xx
+registry.xx.xx.net/build-system/build-slave-xx   dev                                                     5ba8xxxab62e1ac   6 months ago    2.38GB
+docker login registry.xx.xx.net
+docker pull registry.xx.xx.net/build-system/build-slave-xxx:dev
+docker tag 5ba8abxxxxxxx62e1ac registry.xx.xx.net/build-system/build-slave-xxxx:v1.01
+docker push registry.xxx.xxx.net/build-system/build-slave-xxxx:v1.01
+
+
 docker pull
 docker run  -p 6000:8080  xxx
 docker start   xxxxcontaners
@@ -63,7 +72,7 @@ RUN yum install -y git-lfs
 
 [epel]
 name=CentOS-$releasever - EPEL
-baseurl=http://repo-aa.cc.aa.net/centos/fedora-epel/$releasever/$basearch/
+baseurl=http://repo-xx.cc.aa.net/centos/fedora-epel/$releasever/$basearch/
 gpgcheck=0
 
 
