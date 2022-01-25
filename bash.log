@@ -15,3 +15,7 @@ LC_ALL=C find ./ -type f -exec  sed -i '' -e "s/xxx@xx.com/xxxxxxx@xx.com/" {} \
 find . -maxdepth 1 -mindepth 1 -type d -exec du -hs  {} \;\
 
   
+find . -maxdepth 3 -mindepth 1 -type d -exec du -hs  {} \;
+
+
+xx4 users | sed -r 's/\(\S+\s*\S+\s*\S+\s*\S+\)//' | awk '{ print $1 , $2 , $4 }' | tr -d "/" | sort -k 3n | head -n 30
