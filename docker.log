@@ -77,6 +77,12 @@ gpgcheck=0
 
 
 
+sudo service docker stop
+sudo yum update docker-engine
+docker system prune -a
+docker images -a
+docker images -f dangling=true
+docker image prune
 
 
 
