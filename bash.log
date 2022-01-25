@@ -1,3 +1,20 @@
+ssh auto done
+
+#!/bin/sh -x
+
+if [ -z "$aaa_SSH_KEY" ]; then
+    # if   ssh using default keyfile
+    ssh "$@"
+else
+    if [[ $1 =~ "ops-bbbbb" ]]; then
+      ssh -i "$aaaaa_JENKINS_SSH_KEY" "$@"
+    else
+      ssh -i "$bbbbb_SLAVE_SSH_KEY" "$@"
+    fi
+fi
+
+
+
 
 du hd 1
 du -h --max-depth=1
