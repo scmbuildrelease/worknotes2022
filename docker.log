@@ -9,3 +9,45 @@ systemctl:
 $ sudo systemctl start docker
 service:
 $ sudo service docker start
+
+- docker commandline
+
+
+- To stop all Docker containers, simply run the following command in your terminal:
+docker kill $(docker ps -q)
+docker rm $(docker ps -a -q)
+docker rmi $(docker images -q)
+
+
+- open docker app and click start
+launchctl list | grep docker
+docker compose ls
+
+docker pull
+docker run  -p 6000:8080  xxx
+docker start   xxxxcontaners
+docker stop  xxxxxcontainers
+docker ps -a
+docker images
+docker logs xxxxxx
+docker exec -it xxxxx  /bin/bash
+docker network ls
+docker container ls -a
+docker container prune 
+
+docker rm
+docker rmi
+docker image ls
+docker image prune
+docker volume ls
+docker volume prune
+docker network ls
+docker network prune
+docker system prune 
+docker volume create portainer_data
+sudo systemctl start docker 
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
+sudo systemctl restart docker.service
+sudo netstat -lntp | grep dockerd
+sudo service docker restart
