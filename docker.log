@@ -86,3 +86,15 @@ docker image prune
 
 
 
+docker run --name nex3 -it -p 8084:8080  git-xx.xx.net/xx-xx/nexus3:v3.29.2-02
+docker run --name nex3 -it -p 8085:8080  jenkins/jenkins:latest
+docker exec -it 7c8bxxxxxxxxxxxxxxxxxx423dff45 /bin/bash 
+ 
+docker login registry.xx.xx.net
+
+docker run --name reg3 -it -p 8083:8080 -e DOCKER_REGISTRY_URL=http://git-xx.xx.net  klausmeyer/docker-registry-browser
+
+docker run --name reg -it -p 8081:8080 -e DOCKER_REGISTRY_URL=http://registry.xx.xx.net  klausmeyer/docker-registry-browser
+
+
+
