@@ -20,8 +20,33 @@ git stash apply
 
 
 
-
 git log --before="2020-08-01" --pretty=oneline
+
+git log --pretty=format:"%ad - %an: %s" --after="2016-01-31" --until="2017-03-10" --author="John Doe"
+
+git log --pretty="%h - %s" --author=gitster --since="2021-10-20" --before="2021-10-26" --no-merges -- t/
+
+git log --pretty=format:"%h - %an, %ar : %s"
+
+git log --pretty=format: --name-only --since="11 days ago" | sort | uniq
+
+git log --name-only   ###file name and path
+
+git log --name-only --after="2021-10-20T16:36:00-07:00" --author=Zachariah  
+
+git diff-tree --no-commit-id --name-only -r e69b8ceba08a77e09be032a64f0da4b5b1947cd5
+
+git show --pretty="" --name-only 6940677e3dd
+
+git log 6940677e3dd --pretty="format:" --name-only  
+
+git show --pretty="format:" --name-only e69b8xxxa64f0da4b5b1947cd5
+
+git show --name-only e69b8cebaxxe09be032xxx7cd5  6770c91xxx5aac29e
+
+git show  e69b8ceba08a77e0xx47cd5  6770c9189ffa7dc50xx
+
+
 
 
 
