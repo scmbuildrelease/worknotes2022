@@ -1,4 +1,27 @@
 
+du hd 1
+du -h --max-depth=1
+
+#!/bin/bash
+errorinfo=`cat error.txt`
+if [ "$errorinfo"=="Error Log" ]
+then
+  echo "could not xx is running now"
+  exit 0
+else
+  echo "successful now"
+  exit 0
+fi
+
+[ -s error.txt ] && echo "file has something" || echo "file is empty"
+
+find . -type f -size +1M
+find ./ -type f -name "*.ttf" -delete
+
+
+
+
+
 
 set -e: exits if a command fails
 set -u: errors if an variable is referenced before being set
