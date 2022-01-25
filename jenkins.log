@@ -1,4 +1,19 @@
 
+
+
+hudson-wsclean-plug
+ws-cleanup  hudson.plugins.ws_cleanup  cleanWs()
+git-lfs-setup-in-jenkins   preSCMbuildstep  git lfs install
+
+https://jenkinsci.github.io/job-dsl-plugin/#method/javaposse.jobdsl.dsl.jobs.FreeStyleJob.quietPeriod
+
+job('example') {
+    quietPeriod(1800)
+}
+
+
+
+
 stop huge jenkins jobs
 - 
 import hudson.model.*
