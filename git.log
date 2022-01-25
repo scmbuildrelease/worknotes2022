@@ -1,0 +1,7 @@
+
+git remote prune origin
+git config --global fetch.prune true
+git checkout c5f567 -- file1/to/restore file2/to/restore
+git stash
+git stash list
+git stash apply
