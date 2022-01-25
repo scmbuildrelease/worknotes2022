@@ -1,0 +1,4 @@
+
+
+install rpm failed with nss issue is because the sudo root permission.
+sudo rpm -i git-lfs-2.10.0-1.el7.x86_64.rpm
