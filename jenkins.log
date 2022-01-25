@@ -14,3 +14,13 @@ if (!prevBuild || prevBuild.result != hudson.model.Result.SUCCESS) {
   def map = ["CLEAN_BUILD": "true"]
   return map
 }
+
+
+
+
+import hudson.model.*
+def job = Jenkins.getInstance().getItem("demo")
+job.updateNextBuildNumber(292)
+println "NextBuildNumber of " + job.name + " set to " + job.getNextBuildNumber()
+ 
+ 
