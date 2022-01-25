@@ -1,0 +1,10 @@
+cd xxx
+export Gxxxx_HOST=git.xxx.net
+export Gxxxxx_TOKEN=X7xxxxxxxxxxxxTt
+export BIxxxxx_HOST=xx-xx.xx-xx.aws
+export BIxxxT_TOKEN=NzY0MxxxxJVqxUjXxxxxxxxxxxxx48uE
+  python3 -m venv venv
+  source venv/bin/activate .
+  pip install -r requirements.txt
+  pip install --upgrade pip
+  pip install argparse
