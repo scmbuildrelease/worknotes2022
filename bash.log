@@ -7,15 +7,22 @@ set -x: shows the commands that get run
 df -aTh
 ps -aux --sort -pcpu,+pmem | head -n 10
 
-
 linux sed -i 's/release\@xx.com/xxx\@xxx.com/g' *
 mac:
 LC_ALL=C find ./ -type f -exec  sed -i '' -e "s/xxx@xx.com/xxxxxxx@xx.com/" {} \; 
 
 find . -maxdepth 1 -mindepth 1 -type d -exec du -hs  {} \;\
 
-  
 find . -maxdepth 3 -mindepth 1 -type d -exec du -hs  {} \;
 
-
 xx4 users | sed -r 's/\(\S+\s*\S+\s*\S+\s*\S+\)//' | awk '{ print $1 , $2 , $4 }' | tr -d "/" | sort -k 3n | head -n 30
+
+
+
+
+
+cat a | tr , \\n | awk '{print $3}' | sort  | grep @aa| sort | sed 's/@aa.com//g' | sort 
+cat b | sed 's/<//g' | sed 's/>//g' |tr '[:upper:]' '[:lower:]'  | sort
+cat a | tr '[:upper:]' '[:lower:]'  | tr ">" \\n | sed 's/(bb)//g' | sed 's/@aa.com//g' |sed 's/@bb.com//g' | sed 's/@cc.com//g' | awk '{print$NF}'  | sed 's/<//g'| sort 
+
+cat a | tr '[:upper:]' '[:lower:]'  | tr ">" \\n | sed 's/(bb)//g' | sed 's/,//g' | sed 's/<//g' |sort
