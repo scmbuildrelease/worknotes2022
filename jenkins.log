@@ -4,3 +4,13 @@ stop huge jenkins jobs
 import hudson.model.*
 def queue = Hudson.instance.queue
 queue.clear()
+
+
+
+
+def prevBuild = currentBuild.getPreviousBuild()
+if (!prevBuild || prevBuild.result != hudson.model.Result.SUCCESS) {
+  println 'Forcing clean build.'
+  def map = ["CLEAN_BUILD": "true"]
+  return map
+}
