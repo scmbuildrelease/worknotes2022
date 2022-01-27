@@ -1,16 +1,29 @@
-set -x
-set -e 
-813 / 5,000
-Translation results
-set -e：启用所有命令的检查。 如果命令因错误而退出并且调用者未检查此类错误，则脚本将立即中止。 启用此功能将使您的脚本更加健壮。 但是不要等到你的脚本“完成”后才设置标志，因为修复脚本以启用此功能将是一场噩梦。 只需将 set -e 写为代码的第一行； 好吧……在炮弹爆炸之后。
-set -x：如果您正在编写简单的脚本，这些脚本旨在为一些任务的执行编写脚本（而不是用 shell 编写的完整程序），请设置此标志以跟踪所有命令的执行。 这将使解释器在执行之前打印每个命令，因此它将帮助您了解任何时间点发生的事情。 
-if [-z "$1"] 
-if [ ! -f "$JENKINS_INPUT_JOB_LIST" ]
-if [ -d "$JENKINS_HOME" ]
+set -x.   set -e 
+set -e：启用所有命令的检查。 如果命令因错误而退出并且调用者未检查此类错误，则脚本将立即中止。 启用此功能将使您的脚本更加健壮。
+但是不要等到你的脚本“完成”后才设置标志，因为修复脚本以启用此功能将是一场噩梦。 只需将 set -e 写为代码的第一行； 好吧……在炮弹爆炸之后。
+set -x：如果您正在编写简单的脚本，这些脚本旨在为一些任务的执行编写脚本（而不是用 shell 编写的完整程序），请设置此标志以跟踪所
+有命令的执行。 这将使解释器在执行之前打印每个命令，因此它将帮助您了解任何时间点发生的事情。 
+set -x enables a mode of the shell where all executed commands are printed to the terminal. 
+In your case it's clearly used for debugging, which is a typical use case for set -x: printing 
+every command as it is executed may help you to visualize the control flow of the script if 
+it is not functioning as expected.
+set +x disables it.
 
 
-xx=$(basename "$i")
+if [-z "$1"]    if paramet file was not given , it is $1 empty , it is zero
+if [ ! -f "$xxx" ] if this file is not exist.
+if [ -d "$JENKINS_HOME" ].  if this dir is there
+
+
+xx=$(basename "$i"). $(basename "/tmp/aaa/aaa/a.txt")  >>>> a.txt
+
 grep -E -i
+pip3 list | grep -Ei 'foo|bar|baz'
+-E, --extended-regexp Interpret PATTERN as an extended regular expression (ERE, see below).
+-i, --ignore-case Ignore case distinctions in both the PATTERN and the input files.
+
+egrep is the same as grep -E. egrep … is deprecated” 
+
 cut -d: -f2
 sed 's/ //'
 cut -f1 -d'.'
