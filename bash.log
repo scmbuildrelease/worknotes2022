@@ -6,7 +6,29 @@ umask
 umask -S
 init dir 777.  -022 = 755
 init file 666.  -022 = 644
+SUID, SGID,STICKY. 4 2 1  SET as the user owner of this file/group
+-rwxr-Sr-x  not set
+-rwxr-sr-x  set
+-rwsr-xr-x user ower x, set by s,rwx421. s==1
 
+sudo chmod 4755.  /usr/bin/su  =====sudo chmod u+s   rwsr--r--
+
+chmod 2755=== chmod g+s
+
+sudo chown :iwang /tmpb
+sudo chmod 2770 /tmpb.      drwxrws---
+sudo useradd -G acconts iwang
+sudo passwd iwang
+sudo chmod 1777 /abc. 1 is sticky drwxrwxrwt  
+
+sudo gpassword -a iwang accounting
+sudo g+rwx accounting
+sudo chmod g+s accounting
+sudo chmod o+t accounting
+sudo o=rx acconting
+
+
+  
 
 set -x.   set -e 
 set -e：启用所有命令的检查。 如果命令因错误而退出并且调用者未检查此类错误，则脚本将立即中止。 启用此功能将使您的脚本更加健壮。
