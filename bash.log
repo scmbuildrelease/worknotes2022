@@ -1,3 +1,39 @@
+set -x
+set -e 
+813 / 5,000
+Translation results
+set -e：启用所有命令的检查。 如果命令因错误而退出并且调用者未检查此类错误，则脚本将立即中止。 启用此功能将使您的脚本更加健壮。 但是不要等到你的脚本“完成”后才设置标志，因为修复脚本以启用此功能将是一场噩梦。 只需将 set -e 写为代码的第一行； 好吧……在炮弹爆炸之后。
+set -x：如果您正在编写简单的脚本，这些脚本旨在为一些任务的执行编写脚本（而不是用 shell 编写的完整程序），请设置此标志以跟踪所有命令的执行。 这将使解释器在执行之前打印每个命令，因此它将帮助您了解任何时间点发生的事情。 
+if [-z "$1"] 
+if [ ! -f "$JENKINS_INPUT_JOB_LIST" ]
+if [ -d "$JENKINS_HOME" ]
+
+
+xx=$(basename "$i")
+grep -E -i
+cut -d: -f2
+sed 's/ //'
+cut -f1 -d'.'
+
+    for i in "$xx_DIR"/*/; do
+        xxxxxx=$(basename "$i") 
+ 	done >"$TEMP_xxx"
+
+
+
+
+
+
+
+-  delete note by inode number
+rm \"la\*
+ls -i
+7404301 "la*
+find . -maxdepth 1 -type f -inum 7404301
+./"la*
+find . -maxdepth 1 -type f -inum 7404301 -delete
+find ./ -type f  -name "a*"
+
 ssh auto done
 
 #!/bin/sh -x
