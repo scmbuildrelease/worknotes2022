@@ -8,6 +8,9 @@ In your case it's clearly used for debugging, which is a typical use case for se
 every command as it is executed may help you to visualize the control flow of the script if 
 it is not functioning as expected.
 set +x disables it.
+With set +e (the default) errors will occur, but the script will continue to run. set -e sets an non-ignoring 
+error state. That means, if command or pipeline has an error (something returns non zero), the bash will stop 
+the execution of the script.
 
 
 if [-z "$1"]    if paramet file was not given , it is $1 empty , it is zero
