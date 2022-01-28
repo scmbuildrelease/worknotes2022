@@ -5,7 +5,7 @@ chmod ugo-x file.txt
 umask
 umask -S
 init dir 777.  -022 = 755
-init file 666.  -022 = 644
+init file 666.  -022 = 644. not excute file by default
 SUID, SGID,STICKY. 4 2 1  SET as the user owner of this file/group
 -rwxr-Sr-x  not set
 -rwxr-sr-x  set
@@ -28,7 +28,26 @@ sudo chmod o+t accounting
 sudo o=rx acconting
 
 
-  
+
+setfacl -m user:root:rwx aclfile
+getfacl -t aclfile
+setfacl -R -m user:iwang:rwx file1
+setfacl -d -m user:iwang:rwx dir1
+setfacl -m group:root:rwx dir1
+setfacl -d -m user:iwang:rwx dir1.  inhertance
+
+setfacl -x -k -d
+setfacl -x user:iwang dir1/
+setfacl -R -b root adir1/
+ 
+sudo setfacl -d -m group:dev:rwx /home/dev
+sudo chmod o+t /home/dev
+sudo setfacl -m group:sales:rx /home/dev
+
+
+
+
+
 
 set -x.   set -e 
 set -e：启用所有命令的检查。 如果命令因错误而退出并且调用者未检查此类错误，则脚本将立即中止。 启用此功能将使您的脚本更加健壮。
