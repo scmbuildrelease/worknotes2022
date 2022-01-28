@@ -1,3 +1,26 @@
+yum help
+
+https://access.redhat.com/articles/yum-cheat-sheet
+yum list available
+yum list installed
+yum list all
+yum list kernel
+yum info vsftpd
+yum deplist nfs-utils
+yum provides "*/bin/top"
+yum search samba
+yum updateinfo security
+yum updateinfo  
+yum repolist
+yum grouplist
+yum groupinfo "web server"
+    yum groupinfo Haskell
+    yum groupinfo "web server"
+    yum repolist
+    yum repoinfo "EPEL-Base*"
+yum repo-pkgs github_git-lfs list
+
+
 
 
 install rpm failed with nss issue is because the sudo root permission.
