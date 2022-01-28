@@ -1,3 +1,9 @@
+touch -m file
+
+ -m      Change the modification time of the file.  The access time of the file is not changed
+             unless the -a flag is also specified.
+             
+
 u=rwx u+rwx g=rw o=
 -rwxrw-r--.
 chmod ugo-x file.txt
