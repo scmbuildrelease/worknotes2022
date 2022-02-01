@@ -4,6 +4,20 @@ second one helps to understand the core system design terms and principles.
 Educative.io system design training which helped me a lot; 
 https://www.educative.io/courses/grokking-the-system-design-interview
 
-
 there is also one free resource that goes through core parts of system design: 
 https://github.com/donnemartin/system-design-primer
+
+#####
+1. ：
+https://www.educative.io/courses/grokking-the-system-design-interview
+
+2.  半小時的step by step guide， ：
+https://www.youtube.com/channel/UC9vLsnF6QPYuH51njmIooCQ
+
+3.  面試前看一些比較實際的例子， design Instagram，chat system之類的， chat system一類的題，
+要make sure提到websocket來實現雙向通信，每種題考點：
+https://www.youtube.com/c/GauravSensei/videos
+
+4.  ：
+https://www.1point3acres.com/bbs/thread-559285-1-1.html
+https://www.1point3acres.com/bbs/thread-683982-1-1.html
