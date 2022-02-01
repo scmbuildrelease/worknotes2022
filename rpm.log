@@ -14,10 +14,10 @@ yum updateinfo
 yum repolist
 yum grouplist
 yum groupinfo "web server"
-    yum groupinfo Haskell
-    yum groupinfo "web server"
-    yum repolist
-    yum repoinfo "EPEL-Base*"
+yum groupinfo Haskell
+yum groupinfo "web server"
+yum repolist
+yum repoinfo "EPEL-Base*"
 yum repo-pkgs github_git-lfs list
 
 
