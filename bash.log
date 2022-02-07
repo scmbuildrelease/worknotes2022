@@ -1,5 +1,7 @@
 touch -m file
 
+netstat -nbo
+
  -m      Change the modification time of the file.  The access time of the file is not changed
              unless the -a flag is also specified.
              
