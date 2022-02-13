@@ -9,6 +9,15 @@ Network Class	Byte 1 Range	Byte 2 Range	Byte 3 Range	Byte 4 Range
 A	0-127	1-254	1-254	1-254
 B	128-191	Preassigned by Internet	1-254	1-254
 C	192-223	Preassigned by Internet	Preassigned by Internet	1-254
+
+sed -E -n '((1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])\.){3}(1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])/p'
+
+
+sed -E -o '((1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])\.){3}(1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])/p'
+
+
+
+
 				
 
 #!/bin/bash
