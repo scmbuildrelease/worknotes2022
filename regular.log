@@ -4,3 +4,35 @@ A	126(2^7-2)	1.0.0.1-127.255.255.254
 B	16384(2^14)	128.0.0.1-191.255.255.254
 C	2097152(2^21)	192.0.0.1-223.255.255.254
 IP地址由32位二进制数组成，为便于使用，常以XXX.XXX.XXX.XXX形式表现，每组XXX代表小于或等于255的10进制数，该表示方法称为点分十进制
+
+Network Class	Byte 1 Range	Byte 2 Range	Byte 3 Range	Byte 4 Range
+A	0-127	1-254	1-254	1-254
+B	128-191	Preassigned by Internet	1-254	1-254
+C	192-223	Preassigned by Internet	Preassigned by Internet	1-254
+				
+
+#!/bin/bash
+cd backupfiles
+shopt -s extglob
+XGLOB='@(Archive|Backup)-[0-9][0-9][0-9][0-9]-[0-9][0-9]-@([0-9]|[0-9][0-9])@(@(.bak|.tar)?(.bz2|.gz|.xz)|.tgz)'
+for FILE in * ;do
+    if [[ $FILE == $XGLOB ]] ;then
+        echo "$FILE matches the extended glob"
+    fi
+done 
+
+
+
+#!/bin/bash
+cd backupfiles
+shopt -s extglob
+XGLOB='@(Archive|Backup)-[0-9][0-9][0-9][0-9]-[0-9][0-9]-@([0-9]|[0-9][0-9])@(@(.bak|.tar)?(.bz2|.gz|.xz)|.tgz)'
+REGEX='^(Archive|Backup)-[0-9]{4}-[0-9]{2}-[0-9]{1,2}((.bak|.tar)(.bz2|.gz|.xz)|.tgz)?'
+for FILE in * ;do
+    if [[ $FILE =~ $REGEX ]] ;then
+        echo "$FILE matches the regex"
+    fi
+done
+
+
+
