@@ -5,6 +5,49 @@ echo -E Bye "\t\t\t" For now "\n\n"
 
 
 
+echo -n hiii \t\t"  #no new line
+echo -e hi "\t\t\n\n"  # meaningful
+echo -E hello "\t\t\n\n"  ##charachter
+
+source a.sh  ##bash new process
+
+./a.sh 
+
+
+declare -l #low case
+declare -u # upcase
+declare -r #readonly
+declare -a  #array
+declare -A   # associated array
+
+typeset x
+x=7
+
+x=0
+while ((x < 10))
+do 
+	echo $x ; date >date.$x
+	((x=x+1))
+done
+
+
+ls -l ./ | while
+	read a b c d 
+	do 
+		echo $c
+	done
+
+
+for n in seq `1 5`
+
+for f in $(find . -name *.c)
+
+for j in *.c
+ 
+for d in $(datefile)
+
+
+
 
 443 https
 
