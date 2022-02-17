@@ -1,3 +1,17 @@
+ps -ly rss sz
+virtualbox  iwang2  passwd apple root goup
+
+useradd iwang2
+passwd iwang2    apple
+useradd -g root iwang2
+useradd -ou 0 -g 0 john
+usermod -a -G root john
+
+if change the root password
+just run "passwd" when u login as root already 
+userdel iwang
+userdel -r iwang
+
 
 
 sz. vsz表示相同的东西，但sz以页面为单位，而vsz以 1024 字节为单位。
