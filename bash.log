@@ -38,6 +38,8 @@ ls -l ./ | while
 	done
 
 
+seq 1 5 
+
 for n in seq `1 5`
 
 for f in $(find . -name *.c)
