@@ -2,9 +2,6 @@
 echo -e "Hello, World\n\n"
 echo -n "Hello, World\n\n"
 echo -E Bye "\t\t\t" For now "\n\n"
-
-
-
 echo -n hiii \t\t"  #no new line
 echo -e hi "\t\t\n\n"  # meaningful
 echo -E hello "\t\t\n\n"  ##charachter
@@ -48,6 +45,12 @@ for j in *.c
  
 for d in $(datefile)
 
+
+
+for f in $(ls /etc 2>/dev/null  | grep su )
+do 
+	echo $f
+done
 
 
 
