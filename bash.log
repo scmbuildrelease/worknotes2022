@@ -1,3 +1,26 @@
+function f2{
+	echo f2222
+	exit
+	echo f2f2
+}
+
+function f1{
+	echo f111
+	return 
+	echo f1f1
+}
+
+echo xxx
+f2
+echo yyy
+n=$(f1)
+echo zzz
+
+
+
+
+
+
 #!/bin/bash
 echo -e "Hello, World\n\n"
 echo -n "Hello, World\n\n"
