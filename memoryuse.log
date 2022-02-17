@@ -1,3 +1,33 @@
+
+
+sz. vsz表示相同的东西，但sz以页面为单位，而vsz以 1024 字节为单位。
+要获取系统的页面大小，您可以使用：
+
+$ getconf PAGE_SIZE
+4096
+rss是当前加载到 RAM 中的进程内存的子集（以千字节为单位）。这必然小于vsz。
+所以“数学”连接是：
+
+vsz * 1024 = sz * page_size
+rss <= vsz
+
+
+ 
+sz and vsz represent the same thing, but sz is in page units, while vsz is in 1024 byte units.
+To get your system's page size, you can use:
+
+$ getconf PAGE_SIZE
+4096
+rss is the subset of the process's memory that is currently loaded in RAM (in kilobytes). This is necessarily smaller than vsz.
+So the "mathematical" connections are:
+
+vsz * 1024 = sz * page_size
+rss <= vsz
+
+
+
+
+
 linux中top命令 VSS,RSS,PSS,USS 四个内存字段的解读。_DarkSuperman-程序员ITS301_linux top vss
 技术标签： PSS  RSS  linux top  top  USS  VSS  android adb  CPU  top uss  
 
@@ -25,3 +55,11 @@ PSS : Proportional Set Size 实际使用的物理内存（比例分配共享库�
 USS : Unique Set Size 进程独自占用的物理内存（不包含共享库占用的内存）即单个进程私有的内存大小，即该进程独占的内存部分。USS揭示了运行一个特定进程在的真实内存增量大小。如果进程终止，USS就是实际被返还给系统的内存大小。
 
 所以，一般情况下有：VSS >= RSS >= PSS >= USS。 
+
+
+们在 为什么 Linux 需要虚拟内存 一文中曾经介绍过 Linux 中的虚拟内存，每个进程能够看到的都是独立的虚拟内存空间，虚拟内存空间只是逻辑上的概念，进程仍然需要访问虚拟内存对应的物理内存，从虚拟内存到物理内存的转换就需要使用每个进程持有页表。
+
+为了存储 64 位操作系统中 128 TiB 虚拟内存的映射数据，Linux 在 2.6.10 中引入了四层的页表辅助虚拟地址的转换2，在 4.11 中引入了五层的页表结构3，在未来还可能会引入更多层的页表结构以支持 64 位的虚拟地址
+
+
+
