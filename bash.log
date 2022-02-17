@@ -1,3 +1,60 @@
+lsof -p $$
+
+cmd 2>&1 | cmd2
+cmd |& cmd2
+
+
+sort <<END
+orange
+apple
+banana
+END
+
+
+while 
+read a b c
+do 
+	echo $a $b $c
+done  <<EOF
+apple bananda orange cherry
+flower grass tree
+human baby
+EOF
+
+
+case $aa in 
+yes|YES|Y|y ) echo good;;
+No|n|n* ) echo bad;;
+*) echo hhhh;;
+esac
+
+
+test -f file
+
+if [[ -f file ]]
+
+
+test -d aaa
+test -f aaa
+test -s aaa
+test -r aa
+test -x aa
+test -w aa
+
+
+if 
+[ ! -w aa ]
+then
+	echo aa
+else
+	echo bb
+fi
+
+
+
+
+
+
 function f2{
 	echo f2222
 	exit
