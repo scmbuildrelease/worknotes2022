@@ -1,4 +1,9 @@
 
+Install Docker: sudo yum install docker-engine -y.
+Start Docker: sudo service docker start.
+Verify Docker: sudo docker run hello-world.
+
+
 - a useful docker reg
 - 
 docker run --name registry-browser -it -p 8082:8080 -e DOCKER_REGISTRY_URL=http://registry.xxxxx.xxxx.net klausmeyer/docker-registry-browser
