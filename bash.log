@@ -220,6 +220,9 @@ if [ -d "$JENKINS_HOME" ].  if this dir is there
 
 xx=$(basename "$i"). $(basename "/tmp/aaa/aaa/a.txt")  >>>> a.txt
 
+grep -E '[hjk]' xxx
+sort -k2 xxx.txt
+
 grep -E -i
 pip3 list | grep -Ei 'foo|bar|baz'
 -E, --extended-regexp Interpret PATTERN as an extended regular expression (ERE, see below).
