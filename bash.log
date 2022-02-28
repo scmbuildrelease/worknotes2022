@@ -325,6 +325,18 @@ uname -r
 free -h
 cat /proc/cpuinfo
 
+df -h
+du -hd1 ./xxx
+sudo lshw | less
+
+pushd xxx
+dirs
+echo ~0
+echo ~1
+popd
+
+
+
 cat a | tr , \\n | awk '{print $3}' | sort  | grep @aa| sort | sed 's/@aa.com//g' | sort 
 cat b | sed 's/<//g' | sed 's/>//g' |tr '[:upper:]' '[:lower:]'  | sort
 cat a | tr '[:upper:]' '[:lower:]'  | tr ">" \\n | sed 's/(bb)//g' | sed 's/@aa.com//g' |sed 's/@bb.com//g' | sed 's/@cc.com//g' | awk '{print$NF}'  | sed 's/<//g'| sort 
