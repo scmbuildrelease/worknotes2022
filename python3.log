@@ -5,6 +5,7 @@
         return flat_list[::-1][:k]
         
 
+cur = "{}->{}".format(cur, nums[end-1])
 
 
 cd xxx
