@@ -314,7 +314,16 @@ xx4 users | sed -r 's/\(\S+\s*\S+\s*\S+\s*\S+\)//' | awk '{ print $1 , $2 , $4 }
 
 
 
+sort -u xxx
+sort -k2 xxx
+sort -k2 -n xxx
+stat file.txt
 
+ls -l /etc/*release
+uname -a 
+uname -r
+free -h
+cat /proc/cpuinfo
 
 cat a | tr , \\n | awk '{print $3}' | sort  | grep @aa| sort | sed 's/@aa.com//g' | sort 
 cat b | sed 's/<//g' | sed 's/>//g' |tr '[:upper:]' '[:lower:]'  | sort
