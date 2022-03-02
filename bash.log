@@ -1,5 +1,7 @@
 set
 printenv. <> export
+set -o
+set +o posix
 
 lsof -p $$
 
