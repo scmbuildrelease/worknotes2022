@@ -1,3 +1,6 @@
+set
+printenv. <> export
+
 lsof -p $$
 
 cmd 2>&1 | cmd2
