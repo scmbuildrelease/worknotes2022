@@ -1,3 +1,11 @@
+fold
+Unix-like operating system command
+fold is a Unix command used for making a file with long lines more readable on a limited width computer terminal by performing a line wrap. Most Unix terminals have a default screen width of 80, and therefore reading files with long lines could get annoying. Wikipedia
+Function: Wrap input lines in each FILE (standard input by default), writing to standard output
+Syntax: fold -bs -w WIDTH FILE
+
+
+
 set
 printenv. <> export
 set -o
