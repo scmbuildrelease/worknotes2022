@@ -20,6 +20,6 @@ https://blog.pramp.com/the-complete-system-design-interviewer-guide-e5d273724db8
 
  
 
-
+system design https://luanjunyi.medium.com/the-table-of-contents-416d2240fa8e
 
 
