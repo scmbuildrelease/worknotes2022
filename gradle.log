@@ -20,4 +20,14 @@ org.gradle.console=rich
 Create a file called gradle.properties inside your ~/.gradle/ folder.
 Inside gradle.properties, add the line org.gradle.console=rich.
 
+y default, the build cache is not enabled. You can enable the build cache in a couple of ways:
+Run with --build-cache on the command-line
+Gradle will use the build cache for this build only.
+Put org.gradle.caching=true in your gradle.properties
+Gradle will try to reuse outputs from previous builds for all builds, unless explicitly disabled with --no-build-cache.
 
+
+A task needs to opt-in to being cacheable (see Cacheable tasks), since it doesn't make sense for every task to be cacheable.
+Opting in can happen by annotating the task with @CacheableTask or by using task.outputs.cacheIf { true }, so you could do that for the npm configure task.
+Note that cacheable tasks need to declare their inputs and outputs correctly. If they don't, then you may experience invalid build failures.
+ 
