@@ -31,3 +31,14 @@ A task needs to opt-in to being cacheable (see Cacheable tasks), since it doesn'
 Opting in can happen by annotating the task with @CacheableTask or by using task.outputs.cacheIf { true }, so you could do that for the npm configure task.
 Note that cacheable tasks need to declare their inputs and outputs correctly. If they don't, then you may experience invalid build failures.
  
+
+./gradlew cleanBuildCache
+
+As @Bradford20000 pointed out in the comments, there might be a gradle.properties file as well as global gradle scripts located under $HOME/.gradle. In such case special attention must be paid when deleting the content of this directory.
+
+The .gradle/caches directory holds the Gradle build cache. So if you have any error about build cache, you can delete it.
+
+The --no-build-cache option will run gradle without the build cache.
+
+Daemon on MS Windows If you're on Windows, you'll need to kill the daemon before it allows you to clear those directories. See Kill all Gradle Daemons Regardless Version? for more info.
+
