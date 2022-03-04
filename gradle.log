@@ -1,0 +1,1 @@
++ ./gradlew clean build publish --max-workers=1 -Dlocation=docker
