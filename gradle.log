@@ -1,1 +1,23 @@
 + ./gradlew clean build publish --max-workers=1 -Dlocation=docker
+
+gradle --version
+gradle help -Dorg.gradle.debug=true
+ --console=verbose flag.
+ --info
+ --info, --stacktrace, --debug in command line option
+ 
+ Steps to get this feature is as follows:-
+
+Goto settings options of android studio.
+In the list of items You will see Build, Execution, deployment option.
+If you click on this you will see Compiler option there you can add command-line options ex:- stacktrace --debug.
+Share
+
+Since Gradle 4.3 you can use org.gradle.console property in gradle.properties:
+org.gradle.console=rich
+
+
+Create a file called gradle.properties inside your ~/.gradle/ folder.
+Inside gradle.properties, add the line org.gradle.console=rich.
+
+
