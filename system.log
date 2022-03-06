@@ -1,7 +1,28 @@
+https://www.youtube.com/watch?v=_NyVaxEIYGo
 
  RabbitMQ. Kafka  
  for bank, security, slow
  for big data, fast, use the zookeeper?
+ 
+ ZooKeeper is used in distributed systems for service synchronization and as a naming registry. When working with Apache Kafka, ZooKeeper is primarily used to track the status of nodes in the Kafka cluster and maintain a list of 
+ Kafka topics and messages.
+ Redis is used if you want to deliver messages instantly to the consumer and you can live up with data loss, 
+ and the amount of data to deal is less. Kafka can be used when you're looking for reliability, high throughput, 
+ fault-tolerant, and volume of data is huge.
+ 
+The biggest difference between Kafka and Redis PUB/SUB is that Kafka is a complete system, while Redis PUB/SUB is 
+just a utility, it doesn't mean to offend Redis. In essence, this is a data 
+integration problem
+
+Redis is an in-memory data structure store, used as a distributed, in-memory key–value database, cache and 
+message broker, with optional durability. Redis supports different kinds of abstract data structures, such as 
+strings, lists, maps, sets, sorted sets, HyperLogLogs, bitmaps, streams, and spatial indices.  
+github.com/redis/redis
+
+Apache Kafka is a framework implementation of a software bus using stream-processing. It is an open-source 
+software platform developed by the Apache Software Foundation written in Scala and Java. The project aims to 
+provide a unified, high-throughput, low-latency platform for handling real-time data feeds. 
+ github.com/apache/kafka
  
 
 
