@@ -24,6 +24,10 @@ software platform developed by the Apache Software Foundation written in Scala a
 provide a unified, high-throughput, low-latency platform for handling real-time data feeds. 
  github.com/apache/kafka
  
+ Cassandra is a free and open-source, distributed, wide-column store, NoSQL database management system designed
+ to handle large amounts of data across many commodity servers, providing high availability with
+ no single point of failure
+ gitbox.apache.org/repos/asf/cassandra.git
 
 
 https://blog.pramp.com/how-to-succeed-in-a-system-design-interview-27b35de0df26
