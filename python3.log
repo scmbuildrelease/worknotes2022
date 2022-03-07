@@ -8,6 +8,7 @@
 cur = "{}->{}".format(cur, nums[end-1])
 
 
+
 cd xxx
 export Gxxxx_HOST=git.xxx.net
 export Gxxxxx_TOKEN=X7xxxxxxxxxxxxTt
@@ -21,3 +22,7 @@ export BIxxxT_TOKEN=NzY0MxxxxJVqxUjXxxxxxxxxxxxx48uE
 
 hashtable
 points.get(num, 0) if have value, else get 0
+
+
+        dic=Counter(nums)
+        keys=sorted(dic.keys())
