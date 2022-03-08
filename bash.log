@@ -1,3 +1,10 @@
+jobs
+fg %3
+ps -ef
+kill -STOP $PID  # suspend
+kill -CONT $PID  # continue (resume)
+
+
 fold
 Unix-like operating system command
 fold is a Unix command used for making a file with long lines more readable on a limited width computer terminal by performing a line wrap. Most Unix terminals have a default screen width of 80, and therefore reading files with long lines could get annoying. Wikipedia
