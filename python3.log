@@ -1,4 +1,12 @@
-        bucket = [[] for _ in range(len(nums) + 1)]
+    forwards = ''.join(re.findall(r'[a-z]+', phrase.lower()))
+    backwards = forwards[::-1]
+    
+    
+    
+   
+
+
+bucket = [[] for _ in range(len(nums) + 1)]
         Count = Counter(nums).items()  
         for num, freq in Count: bucket[freq].append(num)
         flat_list = list(chain(*bucket))
