@@ -1,4 +1,10 @@
 
+Representational state transfer (REST) is a software architectural style that was created to guide the design and development of the architecture for the World Wide Web
+A RESTful API is an architectural style for an application program interface (API) that uses HTTP requests to access and use data. That data can be used to GET, PUT, POST and DELETE data types, which refers to the reading, updating, creating and deleting of operations concerning resources.
+
+Put simply, there are no differences between REST and RESTful as far as APIs are concerned. REST is the set of constraints. RESTful refers to an API adhering to those constraints. It can be used in web services, applications, and software.
+
+
 SOAP is a messaging protocol specification for exchanging structured information in the implementation of 
 web services in computer networks.  SOAP – Simple Object Access Protocol
 REST follows the object-oriented programming paradigm of noun-verb. REST is very data-driven,
