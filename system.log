@@ -1,3 +1,36 @@
+
+SOAP is a messaging protocol specification for exchanging structured information in the implementation of 
+web services in computer networks.  SOAP – Simple Object Access Protocol
+REST follows the object-oriented programming paradigm of noun-verb. REST is very data-driven,
+epresentational state transfer is a software architectural style that was created to guide the design and development of the architecture for the World Wide Web. REST defines a set of constraints for how the architecture of an Internet-scale distributed hypermedia system, such as the Web, should behave. 
+Representational state transfer (REST) is a software architectural style that was created to guide the design and development of the architecture for the World Wide Web
+A RESTful API is an architectural style for an application program interface (API) that uses HTTP requests to access and use data. That data can be used to GET, PUT, POST and DELETE data types, which refers to the reading, updating, creating and deleting of operations concerning resources.
+
+Put simply, there are no differences between REST and RESTful as far as APIs are concerned. REST is the set of constraints. RESTful refers to an API adhering to those constraints. It can be used in web services, applications, and software.
+
+
+
+
+SOAP provides the following advantages when compared to REST:
+
+Language, platform, and transport independent (REST requires use of HTTP)     
+Works well in distributed enterprise environments (REST assumes direct point-to-point communication)
+Standardized
+Provides significant pre-build extensibility in the form of the WS* standards
+Built-in error handling
+Automation when used with certain language products
+REST is easier to use for the most part and is more flexible. It has the following advantages when compared to SOAP:
+
+Uses easy to understand standards like swagger and OpenAPI Specification 3.0
+Smaller learning curve
+Efficient (SOAP uses XML for all messages, REST mostly uses smaller message formats like JSON)
+Fast (no extensive processing required)
+Closer to other Web technologies in design philosophy
+As one REST API tutorial put it: SOAP is like an envelope while REST is just a postcard.
+
+
+
+
 https://www.youtube.com/watch?v=_NyVaxEIYGo
 https://github.com/cicadasmile/spring-cloud-base
 https://blog.51cto.com/u_14439672/2554728
