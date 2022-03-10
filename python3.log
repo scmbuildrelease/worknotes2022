@@ -1,4 +1,6 @@
-   for 2. Add Two Numbers, since the sum is the new number ,should create a new node, for remove duplicated node
+   
+    minprice=float("inf")
+    for 2. Add Two Numbers, since the sum is the new number ,should create a new node, for remove duplicated node
    since it is already be the node and val, we do not need to create new one and just set the next links.
    
         dummy = ListNode(0,head)
