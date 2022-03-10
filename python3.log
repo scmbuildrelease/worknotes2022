@@ -1,9 +1,104 @@
+
+import csv
+def merge_csv(csv_list, output_path):
+    # build list with all fieldnames
+    fieldnames = list()
+    for file in csv_list:
+        with open(file, 'r') as input_csv:
+            fn = csv.DictReader(input_csv).fieldnames
+            fieldnames.extend(x for x in fn if x not in fieldnames)
+    # write data to output file based on field names
+    with open(output_path, 'w', newline='') as output_csv:
+        writer = csv.DictWriter(output_csv, fieldnames=fieldnames)
+        writer.writeheader()
+        for file in csv_list:
+            with open(file, 'r') as input_csv:
+                reader = csv.DictReader(input_csv)
+                for row in reader:
+                    writer.writerow(row)
+if __name__ == '__main__':
+    merge_csv(['class1.csv', 'class2.csv'], 'all_students.csv')
+    
+    
+    import os
+from zipfile import ZipFile
+def zip_all(search_dir, extension_list, output_path):
+    with ZipFile(output_path, 'w') as output_zip:
+        for root, dirs, files in os.walk(search_dir):
+            rel_path = os.path.relpath(root, search_dir)
+            for file in files:
+                name, ext = os.path.splitext(file)
+                if ext.lower() in extension_list:
+                    output_zip.write(os.path.join(root, file),
+                                     arcname=os.path.join(rel_path, file))
+if __name__ == '__main__':
+    zip_all('.\\my_stuff', ['.jpg','.txt'], 'my_stuff.zip')
+
+    import os
+from os.path import join, getsize
+for root, dirs, files in os.walk('python/Lib/email'):
+    print(root, "consumes", end=" ")
+    print(sum(getsize(join(root, name)) for name in files), end=" ")
+    print("bytes in", len(files), "non-directory files")
+    if 'CVS' in dirs:
+        dirs.remove('CVS')  # don't visit CVS directories
+        
+        
+        
+  import os
+import re
+import urllib.parse
+import urllib.request
+def download_files(first_url, output_dir):
+    if not os.path.isdir(output_dir):
+        os.mkdir(output_dir)
+    url_head, url_tail = os.path.split(first_url)
+    first_index = re.findall(r'[0-9]+', url_tail)[-1]
+    index_count, error_count = 0, 0
+    while(error_count < 5):
+        next_index = str(int(first_index) + index_count)
+        if first_index[0] == '0': # zero padded
+            next_index = '0' * (len(first_index) - len(next_index)) + next_index
+        next_url = urllib.parse.urljoin(url_head, re.sub(first_index, next_index, url_tail))
+        try:
+            output_file = os.path.join(output_dir, os.path.basename(next_url))
+            urllib.request.urlretrieve(next_url, output_file)
+            print('Successfully downloaded {}'.format(os.path.basename(next_url)))
+        except IOError:
+            print('Could not retrieve {}'.format(next_url))
+            error_count += 1
+        index_count += 1        
+if __name__ == '__main__':
+    download_files('http://123.xx.net/image001.jpg', '.\\images')
+    
+    
+    
+    
+        
+    
+    
+    
+    utf8 = "Hello, World!".encode()
+print(utf8)
+OUTPUT
+b'Hello, World!'
+print(utf8.decode())
+OUTPUT
+Hello, World!
+
+      
       with open(path, encoding='utf-8') as file:
         all_words = re.findall(r"[0-9a-zA-Z-']+", file.read())
         all_words = [word.upper() for word in all_words]
         word_counts = collections.Counter(all_words)
    
-   
+   import secrets
+def generate_passphrase(num_words):
+    with open('diceware.wordlist.asc', 'r') as file:    
+        lines = file.readlines()[2:7778]
+        word_list = [line.split()[1] for line in lines]
+    words = [secrets.choice(word_list) for i in range(num_words)]
+    return ' '.join(words)
    
    
    minprice=float("inf")
