@@ -1,4 +1,18 @@
-    forwards = ''.join(re.findall(r'[a-z]+', phrase.lower()))
+   for 2. Add Two Numbers, since the sum is the new number ,should create a new node, for remove duplicated node
+   since it is already be the node and val, we do not need to create new one and just set the next links.
+   
+        dummy = ListNode(0,head)
+        pred = dummy  
+        pred.next = head.next
+        return dummy.next
+        
+        result=ListNode(0)
+        res=result
+        res.next=ListNode(summ)
+        res=res.next
+        
+   
+   forwards = ''.join(re.findall(r'[a-z]+', phrase.lower()))
     backwards = forwards[::-1]
     
     There are two distincts types of 'time', in this context: absolute time and relative time.
