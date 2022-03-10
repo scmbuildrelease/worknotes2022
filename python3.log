@@ -1,5 +1,12 @@
+      with open(path, encoding='utf-8') as file:
+        all_words = re.findall(r"[0-9a-zA-Z-']+", file.read())
+        all_words = [word.upper() for word in all_words]
+        word_counts = collections.Counter(all_words)
    
-    minprice=float("inf")
+   
+   
+   
+   minprice=float("inf")
     for 2. Add Two Numbers, since the sum is the new number ,should create a new node, for remove duplicated node
    since it is already be the node and val, we do not need to create new one and just set the next links.
    
