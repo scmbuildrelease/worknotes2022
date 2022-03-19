@@ -13,6 +13,14 @@ cmd = "/usr/sbin/system_profiler SPHardwareDataType | fgrep 'Serial' | awk '{pri
 (status, output) = commands.getstatusoutput(cmd)
 print status, output
 
+#import commands
+#https://docs.python.org/2/library/commands.html
+import subprocess
+cmd = "/usr/sbin/system_profiler SPHardwareDataType | fgrep 'Serial' | awk '{print $NF}'"
+(status, output) = subprocess.getstatusoutput(cmd)
+print(status, output)
+
+
 
 
 
