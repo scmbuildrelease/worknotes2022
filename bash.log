@@ -1,3 +1,21 @@
+NF is a predefined variable whose value is the number of fields in the current record. awk automatically 
+updates the value of NF each time it reads a record. No matter how many fields there are, the last field 
+in a record can be represented by $NF . So, $NF is the same as $7 , which is ' example.
+/usr/sbin/system_profiler SPHardwareDataType | fgrep 'Serial' | awk '{print $NF}'
+/usr/sbin/system_profiler SPHardwareDataType | fgrep 'UUID' | awk '{print $NF}'
+
+cmd = "/usr/sbin/system_profiler SPHardwareDataType | fgrep 'Serial' | awk '{print $NF}'"
+output = os.popen(cmd)
+print output.read()
+
+import commands
+cmd = "/usr/sbin/system_profiler SPHardwareDataType | fgrep 'Serial' | awk '{print $NF}'"
+(status, output) = commands.getstatusoutput(cmd)
+print status, output
+
+
+
+
 jobs
 fg %3
 ps -ef
