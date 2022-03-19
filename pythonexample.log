@@ -1,1 +1,162 @@
-hi
+#batching commandline.py
+
+import sys
+import random
+import subprocess
+def generateFiles(numFiles, nameFiles):
+    for i in range(0,numFiles):
+        postfix = str(i) + '.txt'
+        postfixDir = str(i)
+        subprocess.check_call(['mkdir','example' + postfixDir])
+        temp = open(nameFiles + postfix, 'w')
+        temp.write(str(random.randint(1,10)))
+        temp.close()
+        subprocess.check_call(['mv', nameFiles + postfix, 'example' + postfixDir])
+    return
+
+def main():
+    print(sys.argv[0],sys.argv[1],sys.argv[2])
+    numFiles = int(sys.argv[1])
+    nameFiles = str(sys.argv[2])
+    generateFiles(numFiles, nameFiles)
+
+main()
+
+##drag and drop
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+url = 'http://dhtmlgoodies.com/scripts/drag-drop-custom/demo-drag-drop-3.html'
+driver = webdriver.Chrome()
+driver.maximize_window()
+driver.get(url)
+source = driver.find_element_by_xpath('//*[@id="box3"]')
+destination = driver.find_element_by_xpath('//*[@id="box103"]')
+actions = ActionChains(driver)
+actions.drag_and_drop(source, destination).perform()
+
+##fileio
+fileName = 'inputFile.txt'
+f = open(fileName,'r')
+output1 = "PassFile.txt"
+output2 = "FailFile.txt"
+passFile = open(output1,'w')
+failFile = open(output2, 'w')
+for line in f:
+    line_split = line.split()
+    if line_split[2] == "P":
+        passFile.write(line)
+    else:
+        failFile.write(line)
+passFile.close()
+failFile.close()
+
+##interaction
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+url = 'https://www.google.com/earth/'
+driver = webdriver.Chrome()
+driver.get(url)
+wait = WebDriverWait(driver, 10)
+launchEarthButton = wait.until(EC.element_to_be_clickable((By.XPATH,'/html/body/header/div/nav[1]/ul[2]/li[2]/a/span/span')))
+launchEarthButton.click()
+
+##orgnize directory
+import os
+from pathlib import Path
+SUBDIRECTORIES = {
+    "DOCUMENTS": ['.pdf','.rtf','.txt'],
+    "AUDIO":['.m4a','.m4b','.mp3'],
+    "VIDEOS": ['.mov','.avi','.mp4'],
+    "IMAGES": ['.jpg','.jpeg','.png']
+}
+def pickDirectory(value):
+    for category, suffixes in SUBDIRECTORIES.items():
+        for suffix in suffixes:
+            if suffix == value:
+                return category
+    return 'MISC' #If filetype doesn't exist in our dictionary
+
+def organizeDirectory():
+    for item in os.scandir():
+        if item.is_dir():
+            continue
+        filePath = Path(item)
+        filetype = filePath.suffix.lower()
+        directory = pickDirectory(filetype)
+        directoryPath = Path(directory)
+        if directoryPath.is_dir() != True:
+            directoryPath.mkdir()
+        filePath.rename(directoryPath.joinpath(filePath))
+
+organizeDirectory()
+
+##scrape
+import requests
+from bs4 import BeautifulSoup
+url = 'http://quotes.toscrape.com/'
+response = requests.get(url)
+soup = BeautifulSoup(response.text,'lxml')
+quotes = soup.find_all("span", class_="text")
+authors = soup.find_all("small", class_="author")
+tags = soup.find_all("div", class_="tags")
+for i in range(0,len(quotes)):
+    print(quotes[i].text)
+    print(authors[i].text)
+    quoteTags = tags[i].find_all('a',class_='tag')
+    for quoteTag in quoteTags:
+        print(quoteTag.text)
+        
+        
+## scrapge pages
+
+from bs4 import BeautifulSoup
+import requests
+url = 'https://scrapingclub.com/exercise/list_basic/'
+count = 1
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'lxml')
+items = soup.find_all('div', class_='col-lg-4 col-md-6 mb-4')
+for i in items:
+    itemName = i.find('h4', class_='card-title').text.strip('\n')
+    itemPrice = i.find('h5').text
+    print('%s) Price: %s , Item Name: %s' % (count, itemPrice, itemName))
+    count = count + 1
+pagination = soup.find('ul', class_='pagination')
+pages = pagination.find_all('a', class_='page-link')
+urls = []
+for page in pages:
+    pageNum = int(page.text) if page.text.isdigit() else None
+    if pageNum != None:
+        link = page.get('href')
+        urls.append(link)
+for i in urls:
+    response = requests.get(url + i)
+    soup = BeautifulSoup(response.text, 'lxml')
+    items = soup.find_all('div', class_='col-lg-4 col-md-6 mb-4')
+    for i in items:
+        itemName = i.find('h4', class_='card-title').text.strip('\n')
+        itemPrice = i.find('h5').text
+        print('%s) Price: %s , Item Name: %s' % (count, itemPrice, itemName))
+        count = count + 1
+        
+       
+  ## web browser
+  
+  from selenium import webdriver
+url = 'https://www.seleniumeasy.com/test/basic-first-form-demo.html'
+driver = webdriver.Chrome()
+driver.get(url)
+messageField = driver.find_element_by_xpath('//*[@id="user-message"]')
+messageField.send_keys("Hello World")
+showMessageButton = driver.find_element_by_xpath('//*[@id="get-input"]/button')
+showMessageButton.click()
+additionField1 = driver.find_element_by_xpath('//*[@id="sum1"]')
+additionField1.send_keys('10')
+additionField2 = driver.find_element_by_xpath('//*[@id="sum2"]')
+additionField2.send_keys('12')
+getTotalButton = driver.find_element_by_xpath('//*[@id="gettotal"]/button')
+getTotalButton.click()
+
+
