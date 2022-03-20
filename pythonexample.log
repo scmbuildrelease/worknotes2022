@@ -1118,6 +1118,58 @@ class MinStack(Stack):
     self.graduationyear = year
 
 
+class Stack(object):
+    def __init__(self):
+        self._stack=list()
+    def push(self,i):
+        self._stack.append(i)
+    def pop(self):
+        return self._stack.pop()
+    def peek(self):
+        return None if self.empty() else self._stack[-1]
+    def empty(self):
+        return len(self._stack)==0
+class MinStack(Stack):
+    def __init__(self):
+        self._stackmin=list()
+    def push(self,i):  ##513
+        if (not self._stackmin ) or (i <= self._stackmin[-1][1]) :
+            self._stackmin.append([i,i])
+        else:
+            tmp=self._stackmin[-1][1]
+            self._stackmin.append([i,tmp])
+
+    def pop(self):
+        if self._stackmin:
+            return self._stackmin.pop()[0]
+        else:
+            return None
+
+    def peek(self):
+        return None if self.empty() else self._stackmin[-1][0]
+    def empty(self):
+        #return super().empty()
+        return len(self._stackmin)==0
+
+    def min(self):
+        if self._stackmin:
+            return self._stackmin[-1][1]
+        else:
+            return None
+
+ms=MinStack()
+ms.push(5)
+assert ms.min()==5
+assert ms.peek()==5
+ms.push(1)
+ms.push(3)
+print(ms._stackmin)
+assert ms.min()==1
+assert ms.pop()==3
+assert ms.min()==1
+assert ms.pop()==1
+assert ms.min()==5
+
 
 
 
