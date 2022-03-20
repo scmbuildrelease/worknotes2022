@@ -1106,6 +1106,20 @@ assert ms.pop()==1
 assert ms.min()==5
 
 
+class MinStack(Stack):
+    def __init__(self):
+        #super().__init__()
+        Stack.__init__(self)
+        self._stackmin=list()
+        
+ class Student(Person):
+  def __init__(self, fname, lname, year):
+    super().__init__(fname, lname)
+    self.graduationyear = year
+
+
+
+
 
 
 
