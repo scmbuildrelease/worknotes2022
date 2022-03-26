@@ -23,3 +23,10 @@ https://blog.pramp.com/the-complete-system-design-interviewer-guide-e5d273724db8
 system design https://luanjunyi.medium.com/the-table-of-contents-416d2240fa8e
 
 
+https://www.linkedin.com/learning/aws-essential-training-for-developers/internet-and-nat-gateways?autoplay=true&resume=false&u=2127409
+https://www.linkedin.com/learning/docker-on-aws/from-virtual-machines-to-containers?u=2127409
+https://www.linkedin.com/learning/docker-continuous-delivery/welcome?autoplay=true&u=2127409
+https://www.linkedin.com/learning/running-jenkins-on-aws-8591136/running-jenkins-on-aws?autoplay=true&u=2127409
+
+
+
