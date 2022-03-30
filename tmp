@@ -1,0 +1,99 @@
+Production Eng. Interview Preparation Guide Coding
+The questions we ask require skills used every day by Production Engineers, including text manipulation, handling input / output, automating tasks, interfacing with external systems / processes, etc. The questions can be a real problem, or something contrived to use these skills. Be prepared to show your work on the whiteboard and be as concise and efficient as possible with your answers. It's totally ok to code in the language you are most familiar with. Take hints from the interviewer and be open to other solutions as you go. It may also help to study your strongest coding language, algorithms, design patterns, core CS concepts and topics related to the scale of our environment before the
+interview. Efficiency, structure, syntax/language familiarity, bugs and correctness of code will be the criteria as to how the interviewer will assess your abilities.
+Language Selection
+As there are many different programming languages used at Facebook to solve infrastructure challenges, we don't have a preference for the language (or languages) you use during the interview. We think that if you can show us solid programming skills in one language, you'll be able to transfer them to other languages. We've ended up hiring candidates who have done their interviews in virtually every modern programming language, including Python, PHP, Perl, Ruby, Java, C/C++, Go, C#, and Haskell. Whichever language you choose, be sure you’re familiar with the built-in libraries and functions in that language.
+Types of Questions Asked (Expect to cover 1-3 questions)
+The questions we ask require skills used every day by Production Engineers (and Systems / Operations / Infrastructure Engineers), including text manipulation, handling input / output, automating tasks, interfacing with external systems / processes, etc. The questions can be a real problem, or something contrived to use these skills. Be prepared to show your work on Coder Pad.
+Coding Interview Prep:
+• The best way to prepare for coding interviews is to practice under similar circumstances by yourself or with a friend, using sample questions. A coding interview is an unnatural event, even if you are used to coding regularly for your job. The problems are different, the environment is different, and you are under time pressure.
+• Choose at least one language and know the basics solidly. It is better to know one language well than multiple languages poorly. This includes creating classes and methods, conditional constructs, loops, built-in data structures, input / output, and interfacing with external processes / systems. Be prepared to use this language to solve any type of problem you may get.
+Suggested Prep Material:
+Consider practicing by trying coding exercises here:
+• https://leetcode.com/
+• https://www.interviewbit.com/facebook-interview-questions/
+• http://www.careercup.com/page
+• http://www.geeksforgeeks.org/forums/forum/interview-questions/
+• http://www.glassdoor.com/Interview/Facebook-Interview-Questions-E40772.htm
+       
+Books:
+• Cracking the Code Interview
+• The Pragmatic Programmer Videos:
+• Cracking the Facebook Coding Interview: The Approach
+• Cracking the Facebook Coding Interview: Problem Walkthrough
+Interview Tips
+
+
+
+
+• Your primary goal in the interview is to obtain a working solution to each problem in a reasonable amount of time. We don't expect you to come up with the most optimized solution on the first attempt. It's okay to first take a naive approach and optimize it later.
+• Take some time after hearing the problem to ask clarifying questions and plan out your solution, rather than jumping right into its implementation.
+• Defensive coding is important, but don't focus on details (such as error handling and corner cases) to the detriment of the overall solution. If you're not sure if a given error handling or edge case is important, ask the interviewer.
+• Don’t get hung up on syntax. If you can’t remember the order or arguments to a function or its name, just say so, leave a placeholder and move on.
+• While you don’t need to provide a play by play of your thought process throughout the interview, it’s best to let the interviewer know why you are making certain decisions.
+o This will also help with any course corrections that may be needed while you are solving the problem.
+• Take hints from the interviewer and be open to other solutions as you go. It's totally fine to present a rough solution in the beginning and iterate as you go along.
+• Use the language you are strongest in. Don't use a language you’re unfamiliar with just because it's trendy or you think it will please the interviewer. If the interviewer doesn't know your strongest language, they will figure it out later.
+• Don’t be afraid to change your mind. If you think you’ve started your solution in the wrong way, or even in the wrong language, it’s OK to admit it and change tack (and the sooner you do it the better).
+
+
+
+
+
+
+
+
+
+
+
+Systems (OS)
+This meeting will cover the theory of systems, as well as troubleshooting issues. This is not linked to a specific operating system or platform, and instead extends to both the general concepts, relevant to any OS, as well as the specifics of a particular OS that you are most familiar with. The discussion will start off fairly high level and progressively get more in depth.
+Examples of the topics covered will be hardware, software (kernel as well as applications), system resources (memory, disk, network), processes management, and the use of debugging tools.
+You may also be asked a scenario type question where something has failed, and you need to figure out what’s wrong and how to fix it. All these questions will more than likely be targeted to Facebook scale so please do your best in trying to think of solutions that would apply, and be effective, in our environment.
+Types of Questions Asked
+     
+The Systems interview generally covers the following topics:
+• System Internals (theory/concepts)
+• Troubleshooting (practical)
+Please expect questions covering both areas. They are described in detail below.
+System Internals
+This portion of the systems interview is designed to evaluate your knowledge of system internals and topics can include, but are not limited to:
+• Process and user management
+• Memory management
+• Networking stack
+• Storage (local, as well as remote)
+• Security, ACLs and permissions
+• The kernel and how it interacts with other system components and resources
+• How the system interacts with the hardware platform
+• No one topic is critical, but a broad familiarity with each of these spaces and the ability to apply that knowledge to new situations is important.
+• Everything from the hardware and OS to the user space is fair game, and we look for both breadth and depth of knowledge.
+Preparation
+Troubleshooting
+The interviewer might lay out a system related issue or problem that you are seeing in the infrastructure and ask you to troubleshoot it. The interviewer would like to see the investigative steps you would take and the reasoning behind your ideas. Use your past experiences and tooling knowledge to discover what entities are causing problems, understand why they are causing problems, and determine a scalable, preventive solution. Here is an example exchange:
+Interviewer: 'You're seeing this in the infrastructure. How would you troubleshoot it?'
+Interviewee: ‘What do I have access to?’
+Interviewer: ‘At least ssh access to the virtual machines, but not necessarily host access’
+Interviewee: 'I'd try to use the tool `foo` to see what actions our service is taking. I’d look for patterns like `bar` because often when using virtual machines, the observed issue is related to this resource. ' Interviewer: 'OK, you’ve discovered what entity/resource is causing us problems, but how do we know why?
+Tips
+ • Review system fundamentals and the topics mentioned above.
+• Review hardware / kernel / user space boundaries and interactions. Examples might
+include: context switches, system calls, common libraries and security/privilege levels
+
+A second scenario might involve having you analyze system performance issues. The interviewer may share a copy of a report and the expectation would be for you to identify what the potential issues might be, what tools you can use to confirm such assumptions, and your approach for resolving them.
+Tips
+Preparation
+depth
+Suggested Reading Material:
+• The Linux Programming Interface (good for user space)
+• Linux Kernel Development (good for kernel space)
+• Systems Performance: Enterprise and the Cloud (good for tooling)
+• Linux and the Unix Philosophy
+• Linux Insides
+• We’re looking for a structured, methodical approach. Narrow down potential issues systematically as you zero in on the root cause. Be prepared to talk about specific tools that you would use, the information they provide, and the way to most effectively use them in hypothetical situations.
+• Don’t be afraid to ask for clarification, you’re not expected to be able to decipher everything in the situation.
+ • Review what protection mechanisms are built-in to the OS of your choice.
+• Review troubleshooting tools for system-level performance issues.
+• Review troubleshooting tools for debugging application-level performance issues or
+bugs.
+• When reviewing tools, consider how the tools work to understand their limitations or
+     
