@@ -1,0 +1,25 @@
+Cross-Site Request Forgery (CSRF) is an attack that forces authenticated users to submit a request to a Web application against which they are currently authenticated. CSRF attacks exploit the trust a Web application has in an authenticated user.
+
+https://sugarac.gitbooks.io/high-frequency-interview-questions-and-answers/content/googlemian-jing.html
+
+操作系统知识
+线程和进程的区别
+https://stackoverflow.com/questions/200469/what-is-the-difference-between-a-process-and-a-thread
+网络知识
+输入 google.comser 出现 http://edusagar.com/articles/view/70/What-happens-when-you-type-a-URL-in-brown
+http和https
+https://www.instantssl.com/ssl-certificate-products/https.html
+HTTP 请求 https://www.w3.org/Protocols/rfc2616/rfc2616-sec5.html
+TCP 3 次握手过程
+https://www.geeksforgeeks.org/computer-network-tcp-3-way-handshake-process/
+操作系统
+远程过程调用 (RPC)
+https://www.geeksforgeeks.org/operating-system-remote-procedure-call-rpc/
+
+
+Both processes and threads are independent sequences of execution. The typical difference is that threads (of the same process) run in a shared memory space, while processes run in separate memory spaces.
+I'm not sure what "hardware" vs "software" threads you might be referring to. Threads are an operating environment feature, rather than a CPU feature (though the CPU typically has operations that make threads efficient).
+Erlang uses the term "process" because it does not expose a shared-memory multiprogramming model. Calling them "threads" would imply that they have shared memory.
+进程和线程都是独立的执行序列。 典型的区别是（同一进程的）线程在共享内存空间中运行，而进程在不同的内存空间中运行。
+我不确定您可能指的是什么“硬件”与“软件”线程。 线程是一种操作环境特性，而不是 CPU 特性（尽管 CPU 通常具有使线程高效的操作）。
+Erlang 使用术语“进程”是因为它没有公开共享内存多道程序模型。 称它们为“线程”意味着它们具有共享内存。
