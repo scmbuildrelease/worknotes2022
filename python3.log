@@ -1,4 +1,12 @@
- 1 count = 1
+
+The nonlocal keyword is used to work with variables inside nested functions, where the variable should not belong to the inner function.
+Use the keyword nonlocal to declare that the variable is not local.
+
+
+The global keyword is used to create global variables from a no-global scope, e.g. inside a function.
+
+
+count = 1
  2 
  3 def a():
  4     count = 'a函数里面'  　　#如果不事先声明，那么函数b中的nonlocal就会报错
