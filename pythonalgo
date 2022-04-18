@@ -1,0 +1,143 @@
+def dfs(state):
+    res = []
+    if is_solution(state):
+        res.append(state[:]) # e.g. add a copy of the state to final result list
+        return
+
+    for choice in choices:
+        if valid(choice):
+            state.add(choice) # make move
+            dfs(state)
+            state.remove(choice) # backtrack
+dfs(root, [])
+
+https://algo.monster/problems/binary_search_intro
+
+
+def binary_search(arr: List[int], target: int) -> int:
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        if arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
+    
+    
+    tree
+  def bfs(root):
+    queue = deque([root])
+    while len(queue) > 0:
+        node = queue.popleft()
+        for child in node.children:
+            if OK(child):
+                return FOUND(child)
+            queue.append(child)
+    return NOT_FOUND
+   
+   Tree
+  def dfs(root, target):
+    if root is None:
+        return None
+    if root.val == target:
+        return root
+    left = dfs(root.left, target)
+    if left is not None:
+        return left
+    return dfs(root.right, target)
+    
+    
+    graph
+    
+ def bfs(root):
+    queue = deque([root])
+    visited = set()
+    while len(queue) > 0:
+        node = queue.popleft()
+        for neighbor in get_neighbors(node):
+            if neighbor in visited:
+                continue
+            queue.append(neighbor)
+            visited.add(neighbor)
+            
+def dfs(root, visited):
+    for neighbor in get_neighbors(root):
+        if neighbor in visited:
+            continue
+        visited.add(neighbor)
+        dfs(neighbor, visited)
+        
+        
+def count_parents(graph):
+    counts = { node: 0 for node in graph }
+    for parent in graph:
+        for node in graph[parent]:
+            counts[node] += 1
+    return counts
+
+topo sort
+
+
+def topo_sort(graph):
+    res = []
+    q = deque()
+    counts = count_parents(graph)
+    for node in counts:
+        if counts[node] == 0:
+            q.append(node)
+    while len(q) > 0:
+        node = q.popleft()
+        res.append(node)
+        for child in graph[node]:
+            counts[child] -= 1
+            if counts[child] == 0:
+                q.append(child)
+    return res
+
+
+trie
+
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.children = {}
+
+    def insert(self, s, idx):
+        # idx: index of the current character in s
+        if idx != len(s):
+            self.children.setdefault(s[idx], Node(s[idx]))
+            self.children.get(s[idx]).insert(s, idx + 1)
+
+
+
+class UnionFind:
+    def __init__(self):
+        self.f = {}
+
+    def find(self, x):
+        y = self.f.get(x, x)
+        if y != x:
+            self.f[x] = y = self.find(y)
+        return y
+
+    def union(self, x, y):
+        self.f[self.find(x)] = self.find(y)
+
+
+
+        
+        
+        
+        
+            
+            
+    
+    
+    
+    
+    
+    
+    
