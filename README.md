@@ -1,6 +1,7 @@
 # worknotes2022
 work notes for the history
 
+  https://www.techinterviewhandbook.org/grind75
   
 
 https://hub.docker.com/repository/docker/iriswang/docker101tutorial
