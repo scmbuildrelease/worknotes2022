@@ -3,8 +3,11 @@
 Jenkins 官方文档：Jenkins 官方文档中有一个关于共享库的部分，概述了该功能、它的工作原理以及如何使用它。你可以在https://www.jenkins.io/doc/book/pipeline/shared-libraries/   找到它
 
 Jenkins 共享库教程：这篇来自 CloudBees 的教程提供了在 Jenkins 中创建和使用共享库的分步指南。您可以在https://www.cloudbees.com/blog/top-10-best-practices-for-jenkins-shared-libraries  找到它
+https://www.cloudbees.com/blog/top-10-best-practices-jenkins-pipeline-plugin
+
 
 Jenkins 共享库示例：GitHub 上提供了多个开源 Jenkins 共享库示例，您可以将其用作参考。例如，您可以在https://github.com/jenkinsci/workflow-cps-global-lib-plugin/tree/master/vars  查看官方 Jenkins 共享库存储库
+https://github.com/jenkinsci/workflow-cps-global-lib-plugin
 
 Visual Studio Code 插件：Jenkins 的 Visual Studio Code 插件为 Jenkinsfiles 和共享库提供语法突出显示和自动完成功能。您可以在 Visual Studio Code Marketplace 中找到它。
 
