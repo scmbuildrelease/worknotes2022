@@ -1,0 +1,24 @@
+class Solution(object):
+    def validPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        def is_pa(i, j):
+            while i<j:
+                if s[i]==s[j]:
+                    i+=1
+                    j-=1
+                else :
+                    return False
+            return True
+
+        l=len(s)
+        i,j=0,l-1
+        while i<j:
+            if s[i]==s[j]:
+                i+=1
+                j-=1
+            else:
+                return is_pa(i+1,j) or is_pa(i,j-1)
+        return True
