@@ -1,0 +1,28 @@
+class Solution(object):
+    def validWordAbbreviation(self, word, abbr):
+        """
+        :type word: str
+        :type abbr: str
+        :rtype: bool
+        """
+        lenw = len(word)
+        lena = len(abbr)
+        i = 0
+        j = 0
+        
+        while i < lenw and j < lena:
+            if word[i] == abbr[j]:
+                i += 1
+                j += 1
+            elif abbr[j].isdigit():
+                if abbr[j] == "0":  # Leading zeros are invalid
+                    return False
+                n = 0
+                while j < lena and abbr[j].isdigit():
+                    n = n * 10 + int(abbr[j])
+                    j += 1
+                i += n
+            else:
+                return False
+                
+        return i == lenw and j == lena
