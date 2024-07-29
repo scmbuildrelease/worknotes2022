@@ -1,0 +1,24 @@
+from collections import deque
+
+class MovingAverage:
+
+    def __init__(self, size: int):
+        self.data = deque()
+        self.real_size = 0
+        self.size = size
+        self.sum = 0
+        
+    def next(self, val: int) -> float:
+        if self.real_size == self.size:
+            self.sum -= self.data.popleft()
+        else:
+            self.real_size += 1
+        self.data.append(val)
+        self.sum += val
+        return self.sum / self.real_size
+        
+
+
+# Your MovingAverage object will be instantiated and called as such:
+# obj = MovingAverage(size)
+# param_1 = obj.next(val)
