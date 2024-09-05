@@ -1,0 +1,23 @@
+import random
+
+class Solution(object):
+    def findKthLargest(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        if not nums:
+            return None
+        pil = random.choice(nums)
+        left = [x for x in nums if x > pil]
+        mid = [x for x in nums if x == pil]
+        right = [x for x in nums if x < pil]
+        L, M = len(left), len(mid)
+
+        if k <= L:
+            return self.findKthLargest(left, k)
+        elif k > L + M:
+            return self.findKthLargest(right, k - L - M)
+        else:
+            return mid[0]
