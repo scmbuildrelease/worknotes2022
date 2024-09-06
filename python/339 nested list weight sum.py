@@ -59,3 +59,19 @@ class Solution(object):
             return s
         
         return dfs(nestedList,1)
+
+
+
+#######
+class Solution:
+    def depthSum(self, nestedList):
+        def dfs(nestedList, depth):
+            total = 0
+            for item in nestedList:
+                if isinstance(item, int):
+                    total += item * depth
+                else:
+                    total += dfs(item, depth + 1)
+            return total
+        
+        return dfs(nestedList, 1)
